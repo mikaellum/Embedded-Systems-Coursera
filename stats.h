@@ -9,32 +9,90 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief contains declarations for the functions in stats.c
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Michael Asfaw
+ * @date Feb 11, 2025
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
-
+void print_statistics(char *arr, int len);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Prints the Calculated Statistics of the Array
  *
- * <Add Extended Description Here>
+ * Takes the return from the other functions and prints them
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return prints the values, returns NULL
  */
+void print_array(char *arr, int len);
+/**
+ * @brief Prints the Array input into the function
+ *
+ * Prints the array for display purposes (formatted)
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return prints the values, returns NULL
+ */
+int find_median(char *arr, int len);
+/**
+ * @brief Calculates and returns the median value
+ *
+ * Median Value Calculator for an array
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return median value
+ */
+int find_mean(char *arr, int len);
+/**
+ * @brief Calculates and returns the mean value
+ *
+ * Mean Value Calculator for an array
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return mean value
+ */
+int find_maximum(char *arr, int len);
+/**
+ * @brief Calculates and returns the maximum value
+ *
+ * Maximum Value Calculator for an array
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return max value
+ */
+int find_minimum(char *arr, int len);
+/**
+ * @brief Calculates and returns the minimum value
+ *
+ * Minimum Value Calculator for an array
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return min value
+ */
+int * sort_array(char *arr, int len);
+/**
+ * @brief Sorts the array and returns a sorted Array
+ *
+ * Sorts the Array and returns a new sorted array
+ *
+ * @param arr Input Array to the Function
+ * @param len Length of the Array
+ * @return sortArr Sorted Array
+ */
+
+
 
 
 #endif /* __STATS_H__ */
