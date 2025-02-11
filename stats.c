@@ -31,43 +31,89 @@
 #define SIZE (40)
 
 /* Define the print_statistics funcion */
-void print_statistics(char *arr, int len) {
+void print_statistics(unsigned char *arr, int len) {
+  // print the mean
+  printf("The mean of the array is: %.2f\n", find_mean(arr, len));
+  printf("The median of the array is: %.2f\n", find_median(arr, len));
+  printf("The maximum of the array is: %u\n", find_maximum(arr, len));
+  printf("The minimum of the array is: %u\n", find_minimum(arr, len));
 
 }
 
 /* Define the print_array funcion */
-void print_array(char *arr, int len) {
-  
+void print_array(unsigned char *arr, int len) {
+  len = SIZE;
+  printf("Array elements are: ");
+  for (int i =0; i < len; i++){
+    printf("%u ", arr[i]);
+  }
+  printf("\n");
 }
 
 /* Define the find_median funcion */
-int find_median(char *arr, int len) {
-  int median;
-  return median;
+float find_median(unsigned char *arr, int len) {
+  // First Sort the Array
+  unsigned char * sortArr = sort_array(arr, SIZE);
+  // Calculate the median
+  if (len % 2 == 0){
+    // for even length arrays
+    float median = (float)(arr[len / 2 -1] + arr[len / 2]) / 2;
+    return median;
+  } else {
+    // for odd length arrays
+    float median = (float)(arr[len / 2]);
+    return median;
+  }
+  
 }
 
 /* Define the find_mean funcion */
-int find_mean(char *arr, int len) {
-  int mean;
+float find_mean(unsigned char *arr, int len) {
+  // Initialize a sum
+  unsigned long sum = 0;
+  for (int i = 0; i < len; i++){
+    sum += arr[i];
+  }
+  // Calculate the mean
+  float mean = (float)sum/len;
   return mean;
 }
 
 /* Define the find_maximum funcion */
-int find_maximum(char *arr, int len) {
-  int max;
+int find_maximum(unsigned char *arr, int len) {
+  unsigned char max = arr[0];
+  for (int i = 1; i < len; i++){
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
   return max;
 }
 
 /* Define the find_minimum funcion */
-int find_minimum(char *arr, int len) {
-  int min;
+int find_minimum(unsigned char *arr, int len) {
+  unsigned char min = arr[0];
+  for (int i = 1; i < len; i++){
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
   return min;
 }
 
 /* Define the sort_array funcion */
-int * sort_array(char *arr, int len) {
-  int * sortArr;
-  return sortArr;
+unsigned char * sort_array(unsigned char *arr, int len) {
+  for (int i = 0; i < len - 1; i++){
+    for (int j = 0; j < len - i - 1; j++){
+      if (arr[j] > arr[j + 1]){
+        // Swap arr[j] and arr[j+1] and impelement
+        unsigned char temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
 }
 
 void main() {
@@ -78,9 +124,8 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  /* Print the Outputs */
+  print_array(test, SIZE);
+  print_statistics(test, SIZE);
 
 }
-
-/* Add other Implementation File Code Here */

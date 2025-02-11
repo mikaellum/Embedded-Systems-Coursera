@@ -21,7 +21,7 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-void print_statistics(char *arr, int len);
+void print_statistics(unsigned char *arr, int len);
 /**
  * @brief Prints the Calculated Statistics of the Array
  *
@@ -31,7 +31,7 @@ void print_statistics(char *arr, int len);
  * @param len Length of the Array
  * @return prints the values, returns NULL
  */
-void print_array(char *arr, int len);
+void print_array(unsigned char *arr, int len);
 /**
  * @brief Prints the Array input into the function
  *
@@ -41,7 +41,7 @@ void print_array(char *arr, int len);
  * @param len Length of the Array
  * @return prints the values, returns NULL
  */
-int find_median(char *arr, int len);
+float find_median(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the median value
  *
@@ -51,7 +51,7 @@ int find_median(char *arr, int len);
  * @param len Length of the Array
  * @return median value
  */
-int find_mean(char *arr, int len);
+float find_mean(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the mean value
  *
@@ -61,7 +61,7 @@ int find_mean(char *arr, int len);
  * @param len Length of the Array
  * @return mean value
  */
-int find_maximum(char *arr, int len);
+int find_maximum(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the maximum value
  *
@@ -71,7 +71,7 @@ int find_maximum(char *arr, int len);
  * @param len Length of the Array
  * @return max value
  */
-int find_minimum(char *arr, int len);
+int find_minimum(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the minimum value
  *
@@ -81,7 +81,7 @@ int find_minimum(char *arr, int len);
  * @param len Length of the Array
  * @return min value
  */
-int * sort_array(char *arr, int len);
+unsigned char * sort_array(unsigned char *arr, int len);
 /**
  * @brief Sorts the array and returns a sorted Array
  *
