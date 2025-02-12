@@ -41,7 +41,7 @@ void print_array(unsigned char *arr, int len);
  * @param len Length of the Array
  * @return prints the values, returns NULL
  */
-float find_median(unsigned char *arr, int len);
+unsigned char find_median(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the median value
  *
@@ -51,7 +51,7 @@ float find_median(unsigned char *arr, int len);
  * @param len Length of the Array
  * @return median value
  */
-float find_mean(unsigned char *arr, int len);
+unsigned char find_mean(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the mean value
  *
@@ -61,7 +61,7 @@ float find_mean(unsigned char *arr, int len);
  * @param len Length of the Array
  * @return mean value
  */
-int find_maximum(unsigned char *arr, int len);
+unsigned char find_maximum(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the maximum value
  *
@@ -71,7 +71,7 @@ int find_maximum(unsigned char *arr, int len);
  * @param len Length of the Array
  * @return max value
  */
-int find_minimum(unsigned char *arr, int len);
+unsigned char find_minimum(unsigned char *arr, int len);
 /**
  * @brief Calculates and returns the minimum value
  *
