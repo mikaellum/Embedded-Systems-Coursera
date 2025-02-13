@@ -33,11 +33,11 @@ FLAGS =	-Wall \
 
 # MSP432 Specfic Flags
 MSP432_FLAGS =	-mcpu=$(CPU) \
-				-mthumb \
-				-march=$(ARCH) \
-				-mfloat-abi=hard \
-				-mfpu=fpv4-sp-d16 \
-				--specs=nosys.specs \
+		-mthumb \
+		-march=$(ARCH) \
+		-mfloat-abi=hard \
+		-mfpu=fpv4-sp-d16 \
+		--specs=nosys.specs \
 
 
 # Target
