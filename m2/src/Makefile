@@ -15,27 +15,92 @@
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
 # Build Targets:
-#      <Put a description of the supported targets here>
+#      	WSL Ubuntu
+#		MSP432 Dev Board
 #
 # Platform Overrides:
-#      <Put a description of the supported Overrides here
+#      	Defaults for PLATFOM = HOST
 #
 #------------------------------------------------------------------------------
 include sources.mk
 
-# Platform Overrides
-PLATFORM = 
+# Flags
+FLAGS =	-Wall \
+		-Werror \
+		-g \
+		-O0 \
+		-std=c99 \
 
-# Architectures Specific Flags
-LINKER_FILE = 
-CPU = 
-ARCH = 
-SPECS = 
+# MSP432 Specfic Flags
+MSP432_FLAGS =	-mcpu=$(CPU) \
+				-mthumb \
+				-march=$(ARCH) \
+				-mfloat-abi=hard \
+				-mfpu=fpv4-sp-d16 \
+				--specs=nosys.specs \
+
+
+# Target
+TARGET = c1m2
+# Platform Overrides
+PLATFORM = HOST
+
 
 # Compiler Flags and Defines
-CC = 
-LD = 
-LDFLAGS = 
-CFLAGS = 
-CPPFLAGs = 
+ifeq ($(PLATFORM), HOST)
+# Architectures Specific Flags
+	CC = gcc
+	CFLAGS = $(FLAGS)
+	CPPFLAGs = -DHOST
+	SIZE = size
 
+else ifeq ($(PLATFORM), MSP432)
+# Architectures Specific Flags
+	CC = arm-none-eabi-gcc
+	CPU = cortex-m4
+	ARCH = armv7e-m
+	LD = arm-none-eabi-ld
+	SIZE = arm-none-eabi-size
+	LINKER_FILE = ../msp432p401r.lds
+	LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE)
+	CFLAGS = $(FLAGS) \
+				$(MSP432_FLAGS)
+	CPPFLAGs = -DMSP432
+
+endif
+
+# Define Parameters
+OBJS = $(SOURCES:.c=.o)
+
+.PHONY: compile-all build clean
+
+# Complile all object files and link into a final executable
+build: $(TARGET).out
+
+$(TARGET).out: $(OBJS)
+	$(CC) $(OBJS) $(CFLAGS) $(CPPFLAGs) $(LDFLAGS) -o $@
+	$(SIZE) $@
+
+# Preprocessed output of all c-program implementation files (-E flag)
+%.i: %.c
+	$(CC) -E $< $(CFLAGS) $(CPPFLAGs) -o $@
+
+# Generate the asssembly files using -S flag
+%.asm: %.c
+	$(CC) -S $< $(CFLAGS) $(CPPFLAGs) -o $@
+
+
+# Generate the object files using -S flag
+%.o: %.c
+	$(CC) -c $< $(CFLAGS) $(CPPFLAGs) -o $@
+
+# Generate dependency files for each source file
+%.d: %.c
+	$(CC) -E -M $< $(CFLAGS) $(CPPFLAGs) -o $@
+
+# Compile all objects without linking
+compile-all: $(OBJS)
+
+# Remove all compiled objects, build files, assembly and executable filees
+clean:
+	rm -f *.i *.map *.o *.asm *.i

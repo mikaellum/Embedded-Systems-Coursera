@@ -20,8 +20,8 @@
  * @date April 1 2017
  *
  */
-#include "platform.h"
-#include "memory.h"
+#include "../include/common/platform.h"
+#include "../include/common/memory.h"
 
 #define MAX_LENGTH (10)
 char buffer[MAX_LENGTH];
