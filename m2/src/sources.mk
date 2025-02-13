@@ -12,7 +12,7 @@
 
 # Initial Source Files and Includes
 SOURCES =	./main.c \
-			./memory.c \
+		./memory.c \
 
 INCLUDES =	-I ../include/common \
 
