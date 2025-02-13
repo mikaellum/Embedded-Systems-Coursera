@@ -24,8 +24,8 @@ ifeq ($(PLATFORM), HOST)
 else ifeq ($(PLATFORM), MSP432)
 # Add your Source files to this variable
 	SOURCES += 	./interrupts_msp432p401r_gcc.c \
-				./startup_msp_432p401r_gcc.c \
-				./system_msp432p401r.c \
+			./startup_msp_432p401r_gcc.c \
+			./system_msp432p401r.c \
 
 # Add your include paths to this variable
 	INCLUDES +=	-I ../include/msp432 \	
