@@ -68,14 +68,17 @@ unsigned char find_median(unsigned char *arr, int len) {
 
 /* Define the find_mean funcion */
 unsigned char find_mean(unsigned char *arr, int len) {
+	// Put in logic for len == 0
+	if (len ==0) {
+		return 0;
+	}
   // Initialize a sum
   unsigned char sum = 0;
   for (int i = 0; i < len; i++){
     sum += arr[i];
   }
   // Calculate the mean
-  unsigned char mean = sum/len;
-  return mean;
+  return (unsigned char)(sum / len);
 }
 
 /* Define the find_maximum funcion */
