@@ -2,7 +2,7 @@
 
     * gcc
     * gcc-arm-none-eabi
-    * Make
+    * make
 
 ## Author and Copyright
 
