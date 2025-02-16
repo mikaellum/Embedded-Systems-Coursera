@@ -22,6 +22,8 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
+#include <stdint.h>
+
 /**
  * @brief Sets a value of a data array 
  *
@@ -89,5 +91,19 @@ void set_all(char * ptr, char value, unsigned int size);
  * @return void.
  */
 void clear_all(char * ptr, unsigned int size);
+
+/**
+ * @brief Moves bytes in memory
+ *
+ * The function takes two byte pointers (one source and one destination) 
+ * and a length of bytes to move from the source location to the destination. 
+ *
+ * @param src Pointer to memory source
+ * @param dst Pointer to memory destination
+ * @param length Length of the memory section
+ *
+ * @return pointer.
+ */
+uint8_t * my_memmove(unit8_t * src, unit8_t * dst, size_t length);
 
 #endif /* __MEMORY_H__ */
