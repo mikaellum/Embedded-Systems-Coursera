@@ -1,5 +1,5 @@
 ## General Information
-----------------------
+
 ### Description
 
 Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems/home/) class on Coursera.
