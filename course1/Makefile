@@ -65,7 +65,7 @@ else ifeq ($(PLATFORM), MSP432)
 	ARCH = armv7e-m
 	LD = arm-none-eabi-ld
 	SIZE = arm-none-eabi-size
-	LINKER_FILE = ../msp432p401r.lds
+	LINKER_FILE = ./msp432p401r.lds
 	LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE)
 	CFLAGS = $(FLAGS) \
 				$(MSP432_FLAGS)

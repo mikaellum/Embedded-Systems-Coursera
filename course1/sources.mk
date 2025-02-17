@@ -11,24 +11,24 @@
 
 
 # Initial Source Files and Includes
-SOURCES =	./main.c \
-		./memory.c \
+SOURCES =	./src/main.c \
+		./src/memory.c \
 
-INCLUDES =	-I ../include/common \
+INCLUDES =	-I ./include/common \
 
 ifeq ($(PLATFORM), HOST)
 # Add your include paths to this variable
-	INCLUDES +=	-I ../include/CMSIS \
+	INCLUDES +=	-I ./include/CMSIS \
 				
 
 else ifeq ($(PLATFORM), MSP432)
 # Add your Source files to this variable
-	SOURCES += 	./interrupts_msp432p401r_gcc.c \
-			./startup_msp_432p401r_gcc.c \
-			./system_msp432p401r.c \
+	SOURCES += 	./src/interrupts_msp432p401r_gcc.c \
+			./src/startup_msp_432p401r_gcc.c \
+			./src/system_msp432p401r.c \
 
 # Add your include paths to this variable
-	INCLUDES +=	-I ../include/msp432 \	
+	INCLUDES +=	-I ./include/msp432 \	
 
 endif
 

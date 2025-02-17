@@ -1,20 +1,24 @@
-# Requirements
+## General Information
 
-    * gcc
-    * gcc-arm-none-eabi
-    * make
+### Description
 
-## Author and Copyright
+Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems) class on Coursera.
+The folders are the assignments, to compile the code use standard make command.
+The output and object files are not included in the repository (.gitignore)
 
-Michael Asfaw, 
-Feb 15, 2025
+### Requirements
 
-## Contains
+	* gcc 11.4.0
+	* gcc-arm-none-eabi
+	* make
 
-Assignment packages for the 3 homeworks and the final project in folder 'course1'
+### Author and Copyright
 
+Author: Michael Asfaw\
+Date: Feb 16, 2025
 
-# Compilation
+### Compilation
 
-The code can be compiled with the provided makefile using the standard `make`
-command. The output and object files are not included in the git (.gitignore)
+```shell
+make -f course1/Makefile
+```
