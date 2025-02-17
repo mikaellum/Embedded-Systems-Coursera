@@ -2,7 +2,7 @@
 
 ### Description
 
-Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems/home/) class on Coursera.
+Assignment packages and solutions for [Embedded Systems](https://www.coursera.org/learn/introduction-embedded-systems) class on Coursera.
 The folders are the assignments, to compile the code use standard make command.
 The output and object files are not included in the repository (.gitignore)
 
@@ -14,8 +14,8 @@ The output and object files are not included in the repository (.gitignore)
 
 ### Author and Copyright
 
-Author: [Michael Asfaw](https://github.com/mikaellum)\
-date: Feb 16, 2025
+Author: Michael Asfaw\
+Date: Feb 16, 2025
 
 ### Compilation
 
