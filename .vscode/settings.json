@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "platform.h": "c",
-        "memory.h": "c",
-        "stats.h": "c",
-        "data.h": "c"
-    }
-}
