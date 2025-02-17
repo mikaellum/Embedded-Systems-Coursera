@@ -14,8 +14,8 @@ The output and object files are not included in the repository (.gitignore)
 
 ### Author and Copyright
 
-Author: [Michael Asfaw](https://github.com/mikaellum)
-date: (2-16-2025)[date:"mdy"]
+Author: [Michael Asfaw](https://github.com/mikaellum)\
+date: Feb 16, 2025
 
 ### Compilation
 
