@@ -22,9 +22,6 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
-#include <stdlib.h>
-#include <stdint.h>
-
 #include <stdint.h>
 
 /**
