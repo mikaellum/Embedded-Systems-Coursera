@@ -21,6 +21,7 @@
  *
  */
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "memory.h"
 
@@ -97,7 +98,7 @@ uint8_t * my_memzero(uint8_t * src, size_t length){
 uint8_t * my_reverse(uint8_t * src, size_t length){
 	uint8_t * temp;
 	temp = (uint8_t *)malloc(length * sizeof(uint8_t));
-	if(! temp){
+	if(!temp){
 		printf("ERROR: unable to allocate dynamic memory for my_reverse function call\n");
 	}
 	uint8_t * lastTemp = temp + length;
