@@ -41,9 +41,13 @@ MSP432_FLAGS =	-mcpu=$(CPU) \
 
 
 # Target
-TARGET = c1m2
+TARGET = final_assessment
 # Platform Overrides
 PLATFORM = HOST
+
+# Switches
+VERBOSE = false
+COURSE1 = false
 
 
 # Compiler Flags and Defines
@@ -61,12 +65,22 @@ else ifeq ($(PLATFORM), MSP432)
 	ARCH = armv7e-m
 	LD = arm-none-eabi-ld
 	SIZE = arm-none-eabi-size
-	LINKER_FILE = ../msp432p401r.lds
+	LINKER_FILE = ./msp432p401r.lds
 	LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE)
 	CFLAGS = $(FLAGS) \
 				$(MSP432_FLAGS)
 	CPPFLAGs = -DMSP432
 
+endif
+
+# Add flag for COURSE1
+ifeq ($(COURSE1), true)
+	CPPFLAGS += -DCOURSE1
+endif
+
+# Add flag for VERBOSE
+ifeq ($(VERBOSE), true)
+	CPPFLAGS += -DVERBOSE
 endif
 
 # Define Parameters

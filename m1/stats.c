@@ -47,6 +47,7 @@ void print_array(unsigned char *arr, int len) {
     printf("%u ", arr[i]);
   }
   printf("\n");
+  return;
 }
 
 /* Define the find_median funcion */

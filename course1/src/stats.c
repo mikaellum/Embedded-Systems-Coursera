@@ -42,11 +42,13 @@ void print_statistics(unsigned char *arr, int len) {
 
 /* Define the print_array funcion */
 void print_array(unsigned char *arr, int len) {
-  printf("Array elements are: ");
+#ifdef VERBOSE
   for (int i =0; i < len; i++){
-    printf("%u ", arr[i]);
+    PRINTF("Array elements are: %u ", arr[i]);
   }
-  printf("\n");
+  PRINTF("\n");
+#endif
+  return;
 }
 
 /* Define the find_median funcion */

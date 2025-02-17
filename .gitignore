@@ -1,1 +1,4 @@
-.DS_Store
+course1/final_assessment.out
+course1/src/main.o
+course1/src/memory.o
+.vscode
