@@ -22,6 +22,7 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
+#include <stdlib.h>
 #include <stdint.h>
 
 /**
@@ -104,6 +105,38 @@ void clear_all(char * ptr, unsigned int size);
  *
  * @return pointer.
  */
-uint8_t * my_memmove(unit8_t * src, unit8_t * dst, size_t length);
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
+
+
+/**
+ * @brief Copies bytes in memory
+ *
+ * The function takes two byte pointers (one source and one destination) 
+ * and a length of bytes to copy from the source location to the destination. 
+ *
+ * @param src Pointer to memory source
+ * @param dst Pointer to memory destination
+ * @param length Length of the memory section
+ *
+ * @return pointer.
+ */
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
+
+
+/**
+ * @brief Copies bytes in memory
+ *
+ * The function takes two byte pointers (one source and one destination) 
+ * and a length of bytes to copy from the source location to the destination. 
+ *
+ * @param src Pointer to memory source
+ * @param dst Pointer to memory destination
+ * @param length Length of the memory section
+ *
+ * @return pointer.
+ */
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
+
+
 
 #endif /* __MEMORY_H__ */
