@@ -27,7 +27,7 @@ char buffer[MAX_LENGTH];
 int main() {
 	// Course deliverable
 #ifdef COURSE1
-	course1()
+	course1();
 #endif
   return 0;
 }
