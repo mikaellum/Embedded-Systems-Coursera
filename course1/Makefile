@@ -46,8 +46,8 @@ TARGET = final_assessment
 PLATFORM = HOST
 
 # Switches
-VERBOSE = false
-COURSE1 = false
+VERBOSE = true
+COURSE1 = true
 
 
 # Compiler Flags and Defines
@@ -57,6 +57,15 @@ ifeq ($(PLATFORM), HOST)
 	CFLAGS = $(FLAGS)
 	CPPFLAGs = -DHOST
 	SIZE = size
+# Add flag for COURSE1
+	ifeq ($(COURSE1), true)
+		CPPFLAGs += -DCOURSE1
+	endif
+
+# Add flag for VERBOSE
+	ifeq ($(VERBOSE), true)
+		CPPFLAGs += -DVERBOSE
+	endif
 
 else ifeq ($(PLATFORM), MSP432)
 # Architectures Specific Flags
@@ -70,18 +79,19 @@ else ifeq ($(PLATFORM), MSP432)
 	CFLAGS = $(FLAGS) \
 				$(MSP432_FLAGS)
 	CPPFLAGs = -DMSP432
-
-endif
-
 # Add flag for COURSE1
-ifeq ($(COURSE1), true)
-	CPPFLAGS += -DCOURSE1
-endif
+	ifeq ($(COURSE1), true)
+		CPPFLAGs += -DCOURSE1
+	endif
 
 # Add flag for VERBOSE
-ifeq ($(VERBOSE), true)
-	CPPFLAGS += -DVERBOSE
+	ifeq ($(VERBOSE), true)
+		CPPFLAGs += -DVERBOSE
+	endif
+
 endif
+
+
 
 # Define Parameters
 OBJS = $(SOURCES:.c=.o)

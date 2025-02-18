@@ -19,6 +19,7 @@
  *
  */
 #include <stdio.h>
+#include "../include/common/memory.h"
 
 #define MAX_LENGTH (10)
 char buffer[MAX_LENGTH];
@@ -27,7 +28,7 @@ char buffer[MAX_LENGTH];
 int main() {
 	// Course deliverable
 #ifdef COURSE1
-	course1();
+	void course1(void);
 #endif
   return 0;
 }

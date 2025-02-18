@@ -2,11 +2,9 @@
  * Copyright (C) 2025 by Michael Asfaw
  *
  *******************************************************************************/
-
+#include <stdint.h>
 #ifdef __DATA_H__
 #define __DATA_H__
-
-#include <stdint.h>
 
 /**
  * @brief Converts Integer to ASCII
